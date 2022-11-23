@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<link href="/dist/output.css" rel="stylesheet" />
-		<script type="module" src="../js/index.js" defer></script>
+		<script type="module" src="../../js/index.mjs" defer></script>
 	</head>
 	<body
 		class="bg-primary flex justify-center align-middle items-center h-screen"
@@ -14,15 +14,11 @@
 		<div
 			class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0"
 		>
-			<div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+			<div class="p-6 sm:p-8">
 				<h1 class="text-xl mx-auto text-white font-boldtext-white md:text-2xl">
 					Signup
 				</h1>
-				<form
-					class="space-y-4 md:space-y-6"
-					method="post"
-					action="/auth/register"
-				>
+				<form class="space-y-4 md:space-y-6" id="signupForm">
 					<div>
 						<label for="email" class="block mb-2 text-sm font-medium text-white"
 							>Name</label
@@ -67,7 +63,7 @@
 							minlength="8"
 						/>
 					</div>
-					<div>
+					<!-- <div>
 						<label
 							for="password"
 							class="block mb-2 text-sm font-medium text-white"
@@ -82,7 +78,7 @@
 							required
 							minlength="8"
 						/>
-					</div>
+					</div> -->
 
 					<button
 						type="submit"
