@@ -1,3 +1,3 @@
-export const signup = async () => {
-	console.log(signup);
+export const signup = async (profile) => {
+	console.log(profile);
 };
