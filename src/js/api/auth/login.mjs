@@ -3,6 +3,14 @@ import { API_SOCIAL_URL } from '../constants.mjs';
 const action = '/auth/login';
 const method = 'POST';
 
+/**
+ * Retrieves value user provided
+ * @param {object} object from user input
+ * ```js
+ * // Send the data to api end point
+ * ```
+ */
+
 export const login = async (profile) => {
 	const loginURL = API_SOCIAL_URL + action;
 
