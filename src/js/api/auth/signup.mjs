@@ -16,5 +16,5 @@ export const signup = async (profile) => {
 
 	const results = await response.json();
 
-	console.log(results);
+	
 };
