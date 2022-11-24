@@ -23,4 +23,8 @@ export const login = async (profile) => {
 	});
 
 	const results = await response.json();
+
+	console.log(results);
+
+	localStorage.setItem('token', results.accessToken);
 };
