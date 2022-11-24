@@ -12,14 +12,17 @@ import { login } from '../api/auth/login.mjs';
  */
 export const loginFormListener = () => {
 	const form = document.querySelector('#loginForm');
-	form.addEventListener('submit', (event) => {
-		event.preventDefault();
 
-		const formValues = event.target;
-		const formData = new FormData(formValues);
+	if (form) {
+		form.addEventListener('submit', (event) => {
+			event.preventDefault();
 
-		const newProfile = Object.fromEntries(formData.entries());
+			const formValues = event.target;
+			const formData = new FormData(formValues);
 
-		login(newProfile);
-	});
+			const newProfile = Object.fromEntries(formData.entries());
+
+			login(newProfile);
+		});
+	}
 };
