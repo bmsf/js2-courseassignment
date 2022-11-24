@@ -1,3 +1,4 @@
+import { signup } from '../api/auth/signup.mjs';
 /**
  * Retrieves value from form when user creates new account
  * and sends it to the api
@@ -17,12 +18,8 @@ export const signupFormListener = () => {
 		const formValues = event.target;
 		const formData = new FormData(formValues);
 
-		console.log(formData);
-
 		const newProfile = Object.fromEntries(formData.entries());
 
-		console.log(newProfile);
-
-		signup(profile);
+		signup(newProfile);
 	});
 };
