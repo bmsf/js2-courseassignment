@@ -1,7 +1,20 @@
 import { API_SOCIAL_URL } from '../constants.mjs';
 
-export const signup = async (profile) => {
-	console.log(profile);
+const action = '/auth/register';
+const method = 'POST';
 
-	const signupURL = API_SOCIAL_URL;
+export const signup = async (profile) => {
+	const signupURL = API_SOCIAL_URL + action;
+
+	const response = await fetch(signupURL, {
+		method,
+		body: JSON.stringify(profile),
+		headers: {
+			'Content-Type': 'application/json',
+		},
+	});
+
+	const results = await response.json();
+
+	
 };
