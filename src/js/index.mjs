@@ -1,6 +1,12 @@
-import { toggleModal } from './modal.mjs';
+// import { toggleModal } from './modal.mjs';
 import { signupFormListener } from './handlers/signup.mjs';
-import * as constant from './api/constants.mjs';
+import { loginFormListener } from './handlers/login.mjs';
+// import * as constant from './api/constants.mjs';
 
-// toggleModal();
-signupFormListener();
+const path = location.pathname;
+
+if (path === '/src/pages/login') {
+	loginFormListener();
+} else if (path === '/src/pages/signup') {
+	signupFormListener();
+}
