@@ -5,10 +5,8 @@ import * as constant from './api/constants.mjs';
 
 const path = location.pathname;
 
-signupFormListener();
-
-// if (path === '/src/pages/login/') {
-// 	loginFormListener();
-// } else if (path === '/src/pages/signup/') {
-// 	signupFormListener();
-// }
+if (path === '/src/pages/login/') {
+	loginFormListener();
+} else if (path === '/src/pages/signup/') {
+	signupFormListener();
+}
