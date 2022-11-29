@@ -12,6 +12,7 @@ import { signup } from '../api/auth/signup.mjs';
  */
 export const signupFormListener = () => {
 	const form = document.querySelector('#signupForm');
+
 	form.addEventListener('submit', (event) => {
 		event.preventDefault();
 
