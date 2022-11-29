@@ -13,14 +13,16 @@ import { signup } from '../api/auth/signup.mjs';
 export const signupFormListener = () => {
 	const form = document.querySelector('#signupForm');
 
-	form.addEventListener('submit', (event) => {
-		event.preventDefault();
+	if (form) {
+		form.addEventListener('submit', (event) => {
+			event.preventDefault();
 
-		const formValues = event.target;
-		const formData = new FormData(formValues);
+			const formValues = event.target;
+			const formData = new FormData(formValues);
 
-		const newProfile = Object.fromEntries(formData.entries());
+			const newProfile = Object.fromEntries(formData.entries());
 
-		signup(newProfile);
-	});
+			signup(newProfile);
+		});
+	}
 };

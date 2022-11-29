@@ -1,7 +1,7 @@
 import { API_SOCIAL_URL } from '../constants.mjs';
 
 const action = '/auth/login';
-const method = 'POST';
+const method = 'post';
 
 /**
  * Retrieves value user provided
@@ -11,20 +11,19 @@ const method = 'POST';
  * ```
  */
 
-export const login = async (profile) => {
+export const login = async (newProfile) => {
 	const loginURL = API_SOCIAL_URL + action;
+	const body = JSON.stringify(newProfile);
 
 	const response = await fetch(loginURL, {
-		method,
-		body: JSON.stringify(profile),
 		headers: {
 			'Content-Type': 'application/json',
 		},
+		method,
+		body,
 	});
 
 	const results = await response.json();
 
 	console.log(results);
-
-	localStorage.setItem('token', results.accessToken);
 };
