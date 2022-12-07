@@ -13,7 +13,5 @@ export const createPost = async (postData) => {
 		body,
 	});
 
-	const post = await response.json();
-
-	
+	return await response.json();
 };

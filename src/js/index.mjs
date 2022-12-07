@@ -2,9 +2,9 @@
 import { signupFormListener } from './handlers/signup.mjs';
 import { loginFormListener } from './handlers/login.mjs';
 
-import { createPost } from './api/posts/create.mjs';
-import { load } from './storage/index.mjs';
 import { createPostFormListener } from './handlers/createPost.mjs';
+
+import * as post from './api/posts/index.mjs';
 
 const path = location.pathname;
 
@@ -17,8 +17,3 @@ createPostFormListener();
 // } else if (path === '/src/pages/signup/') {
 // 	signupFormListener();
 // }
-
-// createPost({
-// 	title: 'Test title',
-// 	body: 'Test body',
-// });
