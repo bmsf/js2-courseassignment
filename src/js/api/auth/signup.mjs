@@ -24,6 +24,4 @@ export const signup = async (newProfile) => {
 	});
 
 	const results = await response.json();
-
-	console.log(results);
 };

@@ -24,9 +24,9 @@ export const login = async (newProfile) => {
 		body,
 	});
 
-	const { accesstoken, ...user } = await response.json();
+	const { accessToken, ...user } = await response.json();
 
-	storage.save('token', accesstoken);
+	storage.save('token', accessToken);
 
 	storage.save('profile', user);
 };
