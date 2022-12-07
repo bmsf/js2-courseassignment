@@ -1,13 +1,11 @@
 import { createPost } from '../api/posts/create.mjs';
 /**
- * Retrieves value from form when user creates new account
- * and sends it to the api
+ * Retrieves value from form when user creates a new post and transforms them into
+ * an object before passing the values to the api
  * @example
  * ```js
- * // Get data from form and send it to api
- * const formValues = gets values that user inputs
- * const formData = uses FormData class to collect key/value pairs of values from input provided by user
- *
+ * // Call the listener to retriev value from form and send to api
+ * createPostFormListener()
  * ```
  */
 export const createPostFormListener = () => {
@@ -19,11 +17,9 @@ export const createPostFormListener = () => {
 		const formValues = event.target;
 
 		const formData = new FormData(formValues);
-		console.log(formData);
 
 		const newPost = Object.fromEntries(formData.entries());
 
-		console.log(newPost);
 		// createPost(newPost);
 	});
 };
