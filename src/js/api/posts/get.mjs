@@ -9,6 +9,7 @@ export const getPosts = async () => {
 	const response = await tokenFetch(getPostURL);
 
 	return await response.json();
+	
 };
 
 export const getPost = async (id) => {

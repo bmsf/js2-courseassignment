@@ -5,9 +5,7 @@ import { signup } from '../api/auth/signup.mjs';
  * @example
  * ```js
  * // Get data from form and send it to api
- * const formValues = gets values that user inputs
- * const formData = uses FormData class to collect key/value pairs of values from input provided by user
- *
+ * signupFormListener()
  * ```
  */
 export const signupFormListener = () => {
