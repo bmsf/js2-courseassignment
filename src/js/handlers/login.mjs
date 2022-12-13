@@ -1,6 +1,6 @@
 import { login } from '../api/auth/login.mjs';
 /**
- * Retrieves value from form when user creates new account
+ * Retrieves value from form when user logs into account
  * and sends it to the api
  * @example
  * ```js

@@ -1,10 +1,10 @@
-import { createPost } from '../api/posts/create.mjs';
+import { editPost } from '../api/posts/edit.mjs';
 /**
  * Retrieves value from form when user creates a new post and transforms them into
  * an object before passing the values to the api
  * @example
  * ```js
- * // Call the listener to retriev value from form and send to api
+ * // Call the listener to retrieve value from form and send to api
  * createPostFormListener()
  * ```
  */
