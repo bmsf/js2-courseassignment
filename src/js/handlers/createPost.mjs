@@ -4,7 +4,7 @@ import { createPost } from '../api/posts/create.mjs';
  * an object before passing the values to the api
  * @example
  * ```js
- * // Call the listener to retriev value from form and send to api
+ * // Call the listener to retrieve value from form and send to api
  * createPostFormListener()
  * ```
  */
