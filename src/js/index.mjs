@@ -7,6 +7,7 @@ handlers.loginFormListener();
 handlers.signupFormListener();
 handlers.viewAllPosts();
 handlers.createPostFormListener();
+handlers.viewPost()
 
 // createPost({ title: 'string', body: 'string' });
 // handlers.viewPost();
