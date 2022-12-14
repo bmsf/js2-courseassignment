@@ -11,15 +11,22 @@ import { createPost } from '../api/posts/create.mjs';
 export const createPostFormListener = () => {
 	const form = document.querySelector('#createPost');
 
-	form.addEventListener('submit', (event) => {
-		event.preventDefault();
+	if (form) {
+		form.addEventListener('submit', (event) => {
+			event.preventDefault();
 
-		const formValues = event.target;
+			const formValues = event.target;
 
-		const formData = new FormData(formValues);
+			console.log(formValues);
 
-		const newPost = Object.fromEntries(formData.entries());
+			const formData = new FormData(formValues);
 
-		createPost(newPost);
-	});
+			console.log(formData);
+
+			const newPost = Object.fromEntries(formData.entries());
+
+			console.log(newPost);
+			// createPost(newPost);
+		});
+	}
 };

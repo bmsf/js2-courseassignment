@@ -1,17 +1,15 @@
-// import { toggleModal } from './modal.mjs';
-import { signupFormListener } from './handlers/signup.mjs';
-import { loginFormListener } from './handlers/login.mjs';
-import * as post from './api/posts/index.mjs';
-import { createPostFormListener } from './handlers/createPost.mjs';
-import { createHTML } from './allPostsHTML.mjs';
+import * as handlers from './handlers/index.mjs';
+import { createPost } from './api/posts/create.mjs';
 
 const path = location.pathname;
 
-loginFormListener();
-signupFormListener();
-createPostFormListener();
+handlers.loginFormListener();
+handlers.signupFormListener();
+handlers.viewAllPosts();
+handlers.createPostFormListener();
 
-createHTML();
+// createPost({ title: 'string', body: 'string' });
+// handlers.viewPost();
 
 // if (path === '/src/pages/login/') {
 // 	loginFormListener();

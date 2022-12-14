@@ -5,14 +5,18 @@ const action = '/posts';
 const method = 'delete';
 
 export const deletePost = async (id) => {
-	if (!id) {
-		throw new Error('Delete requires a postID');
+	try {
+		if (!id) {
+			throw new Error('Delete requires a postID');
+		}
+		const deletePostURL = `${API_SOCIAL_URL}${action}/${id}`;
+
+		const response = await tokenFetch(deletePostURL, {
+			method,
+		});
+
+		return await response.json();
+	} catch (err) {
+		console.log(err);
 	}
-	const deletePostURL = `${API_SOCIAL_URL}${action}/${id}`;
-
-	const response = await tokenFetch(deletePostURL, {
-		method,
-	});
-
-	return await response.json();
 };

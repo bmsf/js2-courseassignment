@@ -8,18 +8,20 @@ import { editPost } from '../api/posts/edit.mjs';
  * createPostFormListener()
  * ```
  */
-export const createPostFormListener = () => {
-	const form = document.querySelector('#createPost');
+export const editPostFormListener = () => {
+	const form = document.querySelector('#editPost');
 
-	form.addEventListener('submit', (event) => {
-		event.preventDefault();
+	if (form) {
+		form.addEventListener('submit', (event) => {
+			event.preventDefault();
 
-		const formValues = event.target;
+			const formValues = event.target;
 
-		const formData = new FormData(formValues);
+			const formData = new FormData(formValues);
 
-		const newPost = Object.fromEntries(formData.entries());
+			const newPost = Object.fromEntries(formData.entries());
 
-		createPost(newPost);
-	});
+			editPost(newPost);
+		});
+	}
 };
