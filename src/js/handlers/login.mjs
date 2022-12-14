@@ -16,6 +16,7 @@ export const loginFormListener = () => {
 			event.preventDefault();
 
 			const formValues = event.target;
+			
 			const formData = new FormData(formValues);
 
 			const newProfile = Object.fromEntries(formData.entries());

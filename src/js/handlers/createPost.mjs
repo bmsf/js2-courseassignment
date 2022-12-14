@@ -17,16 +17,11 @@ export const createPostFormListener = () => {
 
 			const formValues = event.target;
 
-			console.log(formValues);
-
 			const formData = new FormData(formValues);
-
-			console.log(formData);
 
 			const newPost = Object.fromEntries(formData.entries());
 
-			console.log(newPost);
-			// createPost(newPost);
+			createPost(newPost);
 		});
 	}
 };
