@@ -5,8 +5,6 @@ import { load } from '../storage/index.mjs';
  * Gathers all posts from API and creates HTML
  */
 
-const feedContainer = document.querySelector('.feed-container');
-
 // const searchBar = document.querySelector('.form-control');
 
 // searchBar.addEventListener('keyup', (e) => {
@@ -25,13 +23,16 @@ const feedContainer = document.querySelector('.feed-container');
 export const viewAllPosts = async () => {
 	const allPosts = await getPosts();
 
+	const feedContainer = document.querySelector('.feed-container');
+
 	const userName = load('profile').name;
 
-	allPosts.map((post) => {
-		const { title, media, tag, body, id } = post;
+	if (feedContainer) {
+		allPosts.map((post) => {
+			const { title, media, tag, body, id } = post;
 
-		if (userName)
-			feedContainer.innerHTML += `
+			if (userName)
+				feedContainer.innerHTML += `
         <div class="w-2/3 shadow-lg text-white flex flex-col cursor-pointer">
             <img class="" src="${media}" alt="${title}">
             <div class="py-10 my-6">
@@ -52,6 +53,7 @@ export const viewAllPosts = async () => {
             </div>
       </div>
         `;
-	});
+		});
+	}
 	deletePostListener();
 };

@@ -15,13 +15,16 @@ export const signup = async (newProfile) => {
 	const signupURL = API_SOCIAL_URL + action;
 	const body = JSON.stringify(newProfile);
 
-	const response = await fetch(signupURL, {
-		headers: {
-			'Content-Type': 'application/json',
-		},
-		method,
-		body,
-	});
-
-	const results = await response.json();
+	try {
+		const response = await fetch(signupURL, {
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			method,
+			body,
+		});
+		return await response.json();
+	} catch (err) {
+		alert(err);
+	}
 };

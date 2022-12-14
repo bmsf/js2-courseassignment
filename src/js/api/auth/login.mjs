@@ -29,7 +29,13 @@ export const login = async (newProfile) => {
 		storage.save('token', accessToken);
 
 		storage.save('profile', user);
+
+		if (response.ok) {
+			window.location.replace('/pages/home/index.html');
+		} else if (!response.ok) {
+			alert('Something went wrong, try again');
+		}
 	} catch (error) {
 		console.log(error);
 	}
-};	
+};
