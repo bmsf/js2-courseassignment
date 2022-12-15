@@ -21,7 +21,9 @@ export const createPostFormListener = () => {
 
 			const newPost = Object.fromEntries(formData.entries());
 
-			createPost(newPost);
+			console.log(newPost);
+
+			// createPost(newPost);
 		});
 	}
 };
