@@ -15,7 +15,6 @@ export const searchBar = (posts) => {
 			return title.includes(searchTarget);
 		});
 
-		console.log(filteredPost);
 		renderHTML(filteredPost);
 	});
 };
