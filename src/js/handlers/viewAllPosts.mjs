@@ -2,19 +2,18 @@ import { getPosts } from '../api/posts/get.mjs';
 import { deletePostListener } from './deletePost.mjs';
 import { load } from '../storage/index.mjs';
 import { searchBar } from './searchBar.mjs';
+
 /**
  * Gathers all posts from API and creates HTML
  */
 
+const feedContainer = document.querySelector('.feed-container');
 export const renderHTML = (posts) => {
-	const feedContainer = document.querySelector('.feed-container');
+	posts.map((post) => {
+		const { title, media, tags, body, id } = post;
 
-	if (feedContainer) {
-		posts.map((post) => {
-			const { title, media, tags, body, id } = post;
-
-			if (media && tags) {
-				const markup = `
+		if (media && tags) {
+			const markup = `
         <a class="w-2/3 shadow-lg cursor-pointer text-white flex flex-col" href='../post.html?id=${id}'>
           <img class="" src="${media}" alt="${title}">
           <div class="py-10 my-6">
@@ -41,18 +40,19 @@ export const renderHTML = (posts) => {
         </a>
         `;
 
-				feedContainer.insertAdjacentHTML('afterbegin', markup);
-			}
-		});
-	}
+			feedContainer.insertAdjacentHTML('afterbegin', markup);
+		}
+	});
 };
 
 export const viewAllPosts = async () => {
 	const allPosts = await getPosts();
 
-	renderHTML(allPosts);
-	searchBar(allPosts);
-
-	// const userName = load('profile').name;
-	deletePostListener();
+	if (feedContainer) {
+		// sortPosts(allPosts);
+		renderHTML(allPosts);
+		searchBar(allPosts);
+		// const userName = load('profile').name;
+		deletePostListener();
+	}
 };

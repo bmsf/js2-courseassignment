@@ -9,7 +9,15 @@ export const getPosts = async () => {
 	const response = await tokenFetch(getPostURL);
 
 	return await response.json();
-	
+};
+
+export const getSortedPosts = async (sortType, sortOrder) => {
+	const getPostURL = `${API_SOCIAL_URL}${action}?sort=${sortType}&sortOrder=${sortOrder}`;
+	const response = await tokenFetch(getPostURL);
+
+	// return await response.json();
+
+	return await response.json();
 };
 
 export const getPost = async (id) => {

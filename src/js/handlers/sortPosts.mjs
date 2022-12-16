@@ -1,19 +1,24 @@
-/**
- * Function for sorting products
- * @param {array} posts
- */
-const dropdown = document.querySelector('#dropdownRadioButton');
-const dropDownMenu = document.querySelector('#dropdownDefaultRadio');
+import { getSortedPosts } from '../api/posts/get.mjs';
+import { renderHTML } from './viewAllPosts.mjs';
 
-dropdown.addEventListener('click', () => {
-	console.log(dropDownMenu);
-});
+export const setupSortPosts = async () => {
+	const dropdown = document.querySelector('#dropdownButton');
+	const dropDownMenu = document.querySelector('#dropdown');
 
-export const sortPosts = (posts) => {
-	// const sorted = posts.sort((a, b) => {
-	// 	if (a.title < b.title) return -1;
-	// 	return 1;
-	// });
+	dropdown.addEventListener('click', () => {
+		if (dropDownMenu.style.display === 'none') {
+			dropDownMenu.style.display = 'block';
+		} else {
+			dropDownMenu.style.display = 'none';
+		}
+	});
 
-	console.log(posts);
+	const queryString = document.location.search;
+	const params = new URLSearchParams(queryString);
+	const sortType = params.get('sort');
+	const sortOrder = params.get('sortOrder');
+
+	const sorted = await getSortedPosts(sortType, sortOrder);
+
+	renderHTML(sorted);
 };

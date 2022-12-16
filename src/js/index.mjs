@@ -1,16 +1,16 @@
 import * as handlers from './handlers/index.mjs';
-import { createPost } from './api/posts/create.mjs';
-import { searchBar } from './handlers/searchBar.mjs';
+import { setupSortPosts } from './handlers/index.mjs';
 
-const path = location.pathname;
+const path = window.location.pathname;
 
 handlers.loginFormListener();
 handlers.signupFormListener();
 handlers.viewAllPosts();
 handlers.createPostFormListener();
 handlers.viewPost();
+handlers.setupSortPosts();
 
-searchBar();
+// sortPosts();
 
 // createPost({ title: 'string', body: 'string' });
 // handlers.viewPost();
