@@ -1,18 +1,9 @@
 import { getSortedPosts } from '../api/posts/get.mjs';
+import { openFilter } from '../openFilter.mjs';
 import { renderHTML } from './viewAllPosts.mjs';
 
 export const setupSortPosts = async () => {
-	const dropdown = document.querySelector('#dropdownButton');
-	const dropDownMenu = document.querySelector('#dropdown');
-
-	dropdown.addEventListener('click', () => {
-		if (dropDownMenu.style.display === 'none') {
-			dropDownMenu.style.display = 'block';
-		} else {
-			dropDownMenu.style.display = 'none';
-		}
-	});
-
+	openFilter();
 	const queryString = document.location.search;
 	const params = new URLSearchParams(queryString);
 	const sortType = params.get('sort');

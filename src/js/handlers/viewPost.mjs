@@ -38,7 +38,6 @@ export const viewPost = async () => {
             </article> 
     
     `;
-
 		modal();
 		postContainer.insertAdjacentHTML('afterbegin', markup);
 	}

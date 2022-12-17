@@ -1,22 +1,16 @@
 import * as handlers from './handlers/index.mjs';
-import { setupSortPosts } from './handlers/index.mjs';
 
 const path = window.location.pathname;
 
-handlers.loginFormListener();
-handlers.signupFormListener();
-handlers.viewAllPosts();
-handlers.createPostFormListener();
 handlers.viewPost();
-handlers.setupSortPosts();
 
-// sortPosts();
-
-// createPost({ title: 'string', body: 'string' });
-// handlers.viewPost();
-
-// if (path === '/src/pages/login/') {
-// 	loginFormListener();
-// } else if (path === '/src/pages/signup/') {
-// 	signupFormListener();
-// }
+if (path === '/pages/post-sorted.html') {
+	handlers.setupSortPosts();
+} else if (path === '/pages/home' || '/pages/home/index.html') {
+	handlers.viewAllPosts();
+	handlers.createPostFormListener();
+} else if (path === '/pages/login/index.html' || '/pages/login/') {
+	handlers.loginFormListener();
+} else if (path === '/pages/signup/index.html' || '/pages/signup/') {
+	handlers.signupFormListener();
+}
