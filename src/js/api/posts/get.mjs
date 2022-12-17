@@ -24,7 +24,7 @@ export const getPost = async (id) => {
 	if (!id) {
 		throw new Error('Delete requires a postID');
 	}
-	const getPostURL = `${API_SOCIAL_URL}${action}/${id}`;
+	const getPostURL = `${API_SOCIAL_URL}${action}/${id}?_author`;
 
 	const response = await tokenFetch(getPostURL);
 

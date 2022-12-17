@@ -30,11 +30,7 @@ export const viewPost = async () => {
                         <img class="w-1/3" src="${media}" alt="${title}" />
                     </div>
                 </div>
-                <button
-                    id='openModal'
-                    class="delete-post text-white bg-primary rounded-lg px-6 py-2.5 text-center">
-                    Edit post
-                </button>
+                
             </article> 
     
     `;

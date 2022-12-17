@@ -3,6 +3,7 @@ import * as handlers from './handlers/index.mjs';
 const path = window.location.pathname;
 
 handlers.viewPost();
+handlers.editPostFormListener();
 
 if (path === '/pages/post-sorted.html') {
 	handlers.setupSortPosts();
