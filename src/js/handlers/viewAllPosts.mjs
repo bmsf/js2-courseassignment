@@ -4,7 +4,8 @@ import { searchBar } from './searchBar.mjs';
 import { openFilter } from '../openFilter.mjs';
 
 /**
- * Gathers all posts from API and creates HTML
+ * renderHTML renders boilerplate HTML to the content feed. 
+ * viewAllPosts gathers allPosts from api and provides it to several different functions.
  */
 
 const feedContainer = document.querySelector('.feed-container');

@@ -1,3 +1,7 @@
+/**
+ * Function for opening and showing the filter dropdown menu
+ */
+
 export const openFilter = () => {
 	const feedContainer = document.querySelector('.feed-container');
 	const dropdown = document.querySelector('#dropdownButton');

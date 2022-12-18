@@ -1,5 +1,9 @@
 import { load } from '../storage/index.mjs';
 
+/**
+ * Functions for authorizing user when sending data to API
+ */
+
 export const headers = () => {
 	const token = load('token');
 

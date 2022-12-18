@@ -1,5 +1,11 @@
 import { renderHTML } from './viewAllPosts.mjs';
 
+/**
+ * Takes in the value provided by the user in the search form and compares it
+ * to the array of posts from the api
+ * @param {array} posts
+ */
+
 export const searchBar = (posts) => {
 	const searchForm = document.querySelector('.search-form');
 	const feedContainer = document.querySelector('.feed-container');

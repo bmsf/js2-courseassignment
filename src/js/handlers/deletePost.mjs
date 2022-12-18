@@ -1,7 +1,12 @@
 import { deletePost } from '../api/posts/delete.mjs';
 
 /**
- 
+ * Retrieves the ID from post when user presses delete button and sends the data to deletePost()
+ * @example
+ * ```js
+ * // Call the listener to retrieve value from post and send to api
+ * deletePostListener()
+ * ```
  */
 export const deletePostListener = async () => {
 	const deleteBtn = document.querySelectorAll('.delete-post');
@@ -15,7 +20,6 @@ export const deletePostListener = async () => {
 			const id = data.id;
 
 			deletePost(id);
-			// location.reload();
 		});
 	});
 };

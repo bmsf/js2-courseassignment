@@ -2,17 +2,16 @@ import { editPost } from '../api/posts/edit.mjs';
 import { getPost } from '../api/posts/get.mjs';
 import { load } from '../storage/index.mjs';
 /**
- * Retrieves value from form when user creates a new post and transforms them into
- * an object before passing the values to the api
+ * Retrieves data from form when user edits a post and transforms them into
+ * an object before passing the values to the api through editPost(). It also pre occupies the 
+ * form values so the user doesn't have to change all of the data.
  * @example
  * ```js
  * // Call the listener to retrieve value from form and send to api
- * createPostFormListener()
+ * editPostFormListener()
  * ```
  */
 export const editPostFormListener = async () => {
-	console.log(load('profile').name);
-
 	const form = document.querySelector('#editPost');
 
 	const queryString = document.location.search;
@@ -21,8 +20,6 @@ export const editPostFormListener = async () => {
 
 	if (form) {
 		const post = await getPost(id);
-
-		console.log(post);
 
 		form.title.value = post.title;
 		form.body.value = post.body;

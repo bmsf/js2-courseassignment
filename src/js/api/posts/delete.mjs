@@ -4,6 +4,13 @@ import { API_SOCIAL_URL } from '../constants.mjs';
 const action = '/posts';
 const method = 'delete';
 
+/**
+ * Takes a post ID and provides it to the deletePostURL and sends delete method to API
+ * for it to delete post with provided ID.
+ * @param {number} id
+ *
+ */
+
 export const deletePost = async (id) => {
 	try {
 		if (!id) {
