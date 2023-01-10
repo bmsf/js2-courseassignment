@@ -1,5 +1,4 @@
 import { getPost } from '../api/posts/get.mjs';
-import { modal } from '../modal.mjs';
 
 /**
  * Function that creates HTML for a specific post gathered from the ID provided by
